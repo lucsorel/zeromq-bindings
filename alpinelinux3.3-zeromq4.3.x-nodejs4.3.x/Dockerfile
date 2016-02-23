@@ -1,4 +1,4 @@
-# docker build -t lucsorel/zeromq-containers:alpinelinux3.3-zeromq4.3.x-nodejs4.3.x .
+# docker build -t lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-nodejs4.3.x .
 FROM mhart/alpine-node:4.3.1
 MAINTAINER Luc Sorel
 

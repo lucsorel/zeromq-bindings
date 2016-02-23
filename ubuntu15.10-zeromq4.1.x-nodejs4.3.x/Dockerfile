@@ -1,15 +1,15 @@
 ## Image built with:
-# docker build -t lucsorel/zeromq-containers:ubuntu15.10-zeromq4.0-nodejs4.3.0 .
+# docker build -t lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x .
 FROM ubuntu:15.10
 MAINTAINER Luc Sorel
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 4.3.0
+ENV NODE_VERSION 4.3.1
 
 # install:
 # - setup dependencies (cleaned up at the end)
 # - ZeroMQ
-# - NodeJS 4.3.0 (gpg keys listed at https://github.com/nodejs/node)
+# - NodeJS 4.3.1 (gpg keys listed at https://github.com/nodejs/node)
 # - Python, make, gcc and g++ dependencies required for NodeJS apps requiring node-gyp bindings
 RUN apt-get update && apt-get install -y --no-install-recommends software-properties-common curl && \
     add-apt-repository -y ppa:chris-lea/zeromq && \
