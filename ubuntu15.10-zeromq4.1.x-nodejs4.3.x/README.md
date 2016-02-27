@@ -5,11 +5,14 @@ This Dockerfile produces an image:
 * with [Nodejs](https://hub.docker.com/_/node/) [4.3.x](https://github.com/nodejs/docker-node/blob/0c722500f66fb5f606a57824babe9798ae98667b/4.3/Dockerfile)
 * with `Python` (2.7), `make`, `gcc` and `g++` dependencies required by `node-gyp` when you `npm install` your NodeJS application with the `zmq` bindings package.
 
-[![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.0-nodejs4.3.0.svg)](https://imagelayers.io/?images=lucsorel/zeromq-containers:ubuntu15.10-zeromq4.0-nodejs4.3.0 'Ubuntu-based NodeJS image with ZeroMQ bindings')
+# Image characteristics
+* [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x 'Ubuntu-based NodeJS image with ZeroMQ bindings')
+* [![](https://github.com/lucsorel/zeromq-bindings/blob/master/docker-logo.png)](https://hub.docker.com/r/lucsorel/zeromq-bindings/ 'Hosted on Docker hub lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x'): `FROM lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x`
 
+# Use it in your Dockerfile
 A typical Dockerfile for a ZeroMQ-NodeJS application would look like:
 
-```
+```dockerfile
 # for an Alpine Linux-based image:
 FROM lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-nodejs4.3.x
 

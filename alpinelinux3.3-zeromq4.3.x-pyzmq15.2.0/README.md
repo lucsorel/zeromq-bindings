@@ -4,11 +4,14 @@ This Dockerfile produces an image:
 * with `Python 2.x`
 * with [ZeroMQ 4.1.x series](https://pkgs.alpinelinux.org/package/main/x86/zeromq) bindings based on the official [py-zmq bindings](https://pyzmq.readthedocs.org/) installed with `pip`.
 
-[![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0 'Alpine Linux-based Python image with ZeroMQ bindings')
+# Image characteristics
+* [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0 'Alpine Linux-based Python image with ZeroMQ bindings')
+* [![](https://github.com/lucsorel/zeromq-bindings/blob/master/docker-logo.png)](https://hub.docker.com/r/lucsorel/zeromq-bindings/ 'Hosted on Docker hub lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0'): `FROM lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0`
 
+# Use it in your Dockerfile
 A typical Dockerfile for a ZeroMQ-Python application would look like:
 
-```
+```dockerfile
 FROM lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0
 
 # installs the Python application
