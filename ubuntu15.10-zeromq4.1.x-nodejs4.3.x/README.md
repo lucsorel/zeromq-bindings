@@ -7,7 +7,7 @@ This Dockerfile produces an image:
 
 # Image characteristics
 * [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x 'Ubuntu-based NodeJS image with ZeroMQ bindings')
-* [![](https://github.com/lucsorel/zeromq-bindings/blob/master/docker-logo.png)](https://hub.docker.com/r/lucsorel/zeromq-bindings/ 'Hosted on Docker hub lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x'): `FROM lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x`
+* [![](https://raw.githubusercontent.com/lucsorel/zeromq-bindings/master/docker-logo.png)](https://hub.docker.com/r/lucsorel/zeromq-bindings/ 'Hosted on Docker hub lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x'): `FROM lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x`
 
 # Use it in your Dockerfile
 A typical Dockerfile for a ZeroMQ-NodeJS application would look like:
