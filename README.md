@@ -3,6 +3,7 @@ Images hosted on [`lucsorel/zeromq-bindings` Docker hub ![](https://raw.githubus
 * [alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0](https://github.com/lucsorel/zeromq-bindings/tree/master/alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0): [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-pyzmq15.2.0 'Alpine Linux-based Python image with ZeroMQ bindings')
 * [alpinelinux3.3-zeromq4.3.x-nodejs4.3.x](https://github.com/lucsorel/zeromq-bindings/tree/master/alpinelinux3.3-zeromq4.3.x-nodejs4.3.x): [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-nodejs4.3.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:alpinelinux3.3-zeromq4.3.x-nodejs4.3.x 'Alpine Linux-based NodeJS image with ZeroMQ bindings')
 * [ubuntu15.10-zeromq4.1.x-nodejs4.3.x](https://github.com/lucsorel/zeromq-bindings/tree/master/ubuntu15.10-zeromq4.1.x-nodejs4.3.x): [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-nodejs4.3.x 'Ubuntu-based NodeJS image with ZeroMQ bindings')
+* [ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x](https://github.com/lucsorel/zeromq-bindings/tree/master/ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x): [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x 'Ubuntu-based scikit-learn image with ZeroMQ bindings')
 
 # Images with ZeroMQ installation and bindings
 ## With bindings for Python applications
@@ -23,6 +24,26 @@ EXPOSE 6969
 
 # starts the application
 CMD [ "python", "my-python-zeromq-app.py" ]
+```
+
+## With bindings for a scikit-learn application
+This image compiles the Python bindings from the official `py-zmq` projects and removes the packages involved in the compilation for image-size sake: [![](https://badge.imagelayers.io/lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x.svg)](https://imagelayers.io/?images=lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x 'Ubuntu 15.10-based scikit-learn image with ZeroMQ bindings').
+
+A typical Dockerfile for a ZeroMQ/scikit-learn application would look like:
+
+```dockerfile
+FROM lucsorel/zeromq-bindings:ubuntu15.10-zeromq4.1.x-scikit-learn0.17.x
+
+# installs the scikit-learn Python script
+RUN mkdir -p /usr/local/data-mining
+WORKDIR /usr/local/data-mining
+COPY stream_analysis.py /usr/local/data-mining/
+
+# exposes the tcp port used by the ZeroMQ socket
+EXPOSE 6969
+
+# starts the application
+CMD [ "python", "stream_analysis.py" ]
 ```
 
 ## With bindings for NodeJS applications
